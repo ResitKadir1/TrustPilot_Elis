@@ -4,12 +4,12 @@
 
 ```js
 python pipeline.py
-```js
+```
 
 ```js
 streamlit run app.py
-```js
+```
 
 
 
-"\033[32m"Resit Kadir"\033[32m"
+"\033[32m"+"Resit Kadir"+"\033[32m"
