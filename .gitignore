@@ -1,0 +1,12 @@
+# Sanal ortamınızı yoksay
+TrustPilot_Elis/
+
+# Genel sanal ortam klasör adları
+venv/
+env/
+.venv/
+
+# PyCharm ayarları ve Python önbellekleri
+.idea/
+__pycache__/
+*.pyc
