@@ -12,4 +12,6 @@ streamlit run app.py
 
 
 
-"\033[32m"+"Resit Kadir"+"\033[32m"
+## $${\color{lightgreen}Resit\space Kadir}$$
+## $${\color{green}22-09-2026\space }$$
+
