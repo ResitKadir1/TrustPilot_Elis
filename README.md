@@ -1,8 +1,8 @@
 
-<iframe src="./https://github.com/user-attachments/files/33031611/Elis.Danmark.Executive.Voice.of.Customer.Dashboard.pdf" width="100%" height="600px"></iframe>
 
-<img width="1835" height="706" alt="1" src="https://github.com/user-attachments/assets/fe27a8e1-4e30-440f-9a8d-a57814df067e" />
-<img width="1407" height="601" alt="2" src="https://github.com/user-attachments/assets/d9ca77be-ce2a-4f04-8092-c0c06f675f17" />
+
+<img width="1407" height="601" alt="2" src="<img width="422" height="616" alt="Screenshot 2026-10-04 at 20 36 48" src="https://github.com/user-attachments/assets/abdf2030-4f48-4b71-8017-f3e3b5471f5d" />
+" />
 
 ```js
 python pipeline.py
