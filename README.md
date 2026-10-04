@@ -9,7 +9,7 @@ python pipeline.py
 ```
 
 ```js
-streamlit run app.py
+streamlit run dashboard.py
 ```
 
 
