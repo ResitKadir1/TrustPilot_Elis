@@ -26,6 +26,17 @@ try:
     if "Sirket_Cevabi" in df_reviews.columns and "Cevap" not in df_reviews.columns:
         df_reviews.rename(columns={"Sirket_Cevabi": "Cevap"}, inplace=True)
 
+    # 2.5. DETAYLI KRONOLOJİK SIRALAMA (Yıl-Ay-Gün Saat:Dakika:Saniye)
+    if "Tarih" in df_reviews.columns:
+        # Tarih metnini saat ve gün sırasını koruyarak datetime objesine çeviriyoruz
+        df_reviews["Tarih"] = pd.to_datetime(df_reviews["Tarih"], errors='coerce', dayfirst=True)
+
+        # En yeni tarih ve saat en üstte olacak şekilde sıralıyoruz
+        df_reviews.sort_values(by="Tarih", ascending=False, inplace=True, na_position='last')
+
+        # Görünümü Yıl-Ay-Gün Saat:Dakika:Saniye formatına çeviriyoruz
+        df_reviews["Tarih"] = df_reviews["Tarih"].dt.strftime('%Y-%m-%d %H:%M:%S')
+
     # 3. Müşteri Yorumu Üzerinden Problem Tespiti
     if "Musteri_Yorumu" in df_reviews.columns:
         df_reviews["Tespit_Edilen_Problem"] = df_reviews["Musteri_Yorumu"].apply(detect_problem_category)
@@ -34,7 +45,13 @@ try:
 
     # 4. Sonuçları Ekrana Yazdırma ve Yeni CSV Oluşturma
     print("--- ANALİZ SONUÇLARI ---")
-    print(df_reviews[["Isim", "Yildiz_Sayisi", "Tespit_Edilen_Problem"]].head(10))
+
+    # Updated display to include the date column if it exists
+    display_cols = ["Isim", "Yildiz_Sayisi", "Tespit_Edilen_Problem"]
+    if "Tarih" in df_reviews.columns:
+        display_cols.insert(0, "Tarih")
+
+    print(df_reviews[display_cols].head(10))
 
     output_file = "trustpilot_elis_analyzed.csv"
     df_reviews.to_csv(output_file, index=False, encoding="utf-8-sig")
